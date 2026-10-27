@@ -94,7 +94,7 @@ const WEDDING_CONFIG = {
       bankName: "MB Bank",
       accountNumber: "686825122001",
       accountName: "DAO DINH HUY",
-      qrImage: "assets/root_images/BANKQR.JPG",
+      qrImage: "assets/root_images/BANKQR.jpg",
     },
   },
 
