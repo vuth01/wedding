@@ -65,8 +65,8 @@ const WEDDING_CONFIG = {
     saveDate7: "assets/root_images/HNH02590.jpg",
     saveDate8: "assets/root_images/HNH02718.jpg",
     // saveDate9: 'assets/root_images/HNH02915.JPG',
-    coupleGroom: "assets/root_images/HNH03545.JPG",
-    coupleBride: "assets/root_images/HNH03430.JPG",
+    coupleGroom: "assets/root_images/HNH03545.jpg",
+    coupleBride: "assets/root_images/HNH03430.jpg",
     storyBanner: "assets/root_images/HNH03680.JPG",
     thankYou: "assets/root_images/DRN00563.JPG",
     gallery: [
