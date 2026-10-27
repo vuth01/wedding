@@ -20,11 +20,11 @@ const WEDDING_CONFIG = {
 
   weddingDate: "2026-11-29T14:00:00",
   dateDisplay: {
-    day: "28",
+    day: "29",
     month: "11",
     year: "2026",
     shortYear: "26",
-    fullDateText: "17:00 | THỨ BẢY | 28.11.2026",
+    fullDateText: "17:00 | THỨ BẢY | 29.11.2026",
   },
 
   venueBride: {
@@ -37,7 +37,7 @@ const WEDDING_CONFIG = {
   venueGroom: {
     name: "TƯ GIA NHÀ TRAI",
     address: "Thôn Văn Hàn - Xã Thái Ninh - Tỉnh Hưng Yên",
-    time: "17:00 | THỨ BẢY | 28.11.2026",
+    time: "10:00 | CHỦ NHẬT | 29.11.2026",
     mapUrl: "https://maps.app.goo.gl/DFPSaRstR3q2vNdG6",
   },
 
@@ -48,10 +48,10 @@ const WEDDING_CONFIG = {
   },
 
   timeline: [
-    { time: "16:00", title: "ĐÓN TIẾP KHÁCH MỜI", icon: "camera" },
+    { time: "09:00", title: "ĐÓN TIẾP KHÁCH MỜI", icon: "camera" },
 
-    { time: "17:00", title: "CHUNG VUI KHAI TIỆC", icon: "dining" },
-    { time: "18:30", title: "THƯỞNG THỨC TIỆC NGỌT, ÂM NHẠC", icon: "music" },
+    { time: "10:00", title: "CHUNG VUI KHAI TIỆC", icon: "dining" },
+    { time: "11:30", title: "THƯỞNG THỨC TIỆC NGỌT, ÂM NHẠC", icon: "music" },
   ],
 
   images: {
@@ -91,9 +91,9 @@ const WEDDING_CONFIG = {
   giftBox: {
     enable: true,
     groomBank: {
-      bankName: "TP Bank",
-      accountNumber: "TEST",
-      accountName: "TEST",
+      bankName: "MB Bank",
+      accountNumber: "686825122001",
+      accountName: "DAO DINH HUY",
       qrImage: "assets/root_images/BANKQR.JPG",
     },
   },
