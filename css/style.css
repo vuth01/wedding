@@ -50,11 +50,11 @@ img {
 }
 
 .col-groom .couple-photo-box img {
-  object-position: right 15% !important;
+  object-position: center !important;
 }
 
 .col-bride .couple-photo-box img {
-  object-position: left 35% !important;
+  object-position: center !important;
 }
 
 body {
@@ -2687,7 +2687,7 @@ select.form-control {
    BRIDE SIDE OVERRIDES ([data-side="bride"])
    ========================================================================== */
 
-/* 1. Hero Section: Đảo thứ tự tên thành "Khánh Huyền & Đức Hoà" */
+/* 1. Hero Section: Đảo thứ tự tên thành "Diệu Linh & Đình Huy" */
 [data-side="bride"] .hero-bottom-names .name-bride {
   order: 1;
 }

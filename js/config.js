@@ -11,7 +11,7 @@ const WEDDING_CONFIG = {
   },
   bride: {
     name: "Diệu Linh",
-    fullName: "Bùi Diệu Lih",
+    fullName: "Bùi Diệu Linh",
     parents: {
       father: "Ông. Bùi Mạnh Thắng",
       mother: "Bà. Nguyễn Thị Thu Hằng",
@@ -29,9 +29,9 @@ const WEDDING_CONFIG = {
 
   venueBride: {
     name: "TƯ GIA NHÀ GÁI",
-    address: "Thôn Trà Hương - Xã Kiến Xương - Tỉnh Hà Nội",
+    address: "Nhà văn hoá Khu Chợ Nam Cương - Xã Nội Bài - TP. Hà Nội",
     time: "17:00 | THỨ BẢY | 28.11.2026",
-    mapUrl: "ttps://maps.app.goo.gl/DFPSaRstR3q2vNdG6",
+    mapUrl: "https://maps.app.goo.gl/Z3Hw8at2QHHgUK1p8",
   },
 
   venueGroom: {
@@ -55,26 +55,26 @@ const WEDDING_CONFIG = {
   ],
 
   images: {
-    hero: "assets/root_images/HNH03015.jpg",
-    saveDate6: "assets/root_images/HNH02786.jpg",
-    saveDate1: "assets/root_images/DRN00773.jpg",
-    saveDate2: "assets/root_images/HNH03555.jpg",
-    saveDate3: "assets/root_images/HNH03675.jpg",
-    saveDate4: "assets/root_images/DRN00570.jpg",
-    saveDate5: "assets/root_images/HNH03428.jpg", // DRN00773 // HNH03428
-    saveDate7: "assets/root_images/HNH02590.jpg",
-    saveDate8: "assets/root_images/HNH02718.jpg",
+    hero: "assets/root_images/DSC03451.jpg",
+    saveDate6: "assets/root_images/DSC04905.jpg",
+    saveDate1: "assets/root_images/DSC03627.jpg",
+    saveDate2: "assets/root_images/DSC03793.jpg",
+    saveDate3: "assets/root_images/DSC03853.jpg",
+    saveDate4: "assets/root_images/DSC04073.jpg",
+    saveDate5: "assets/root_images/DSC04280.jpg", // DRN00773 // HNH03428
+    saveDate7: "assets/root_images/DSC04377.jpg",
+    saveDate8: "assets/root_images/DSC04299.jpg",
     // saveDate9: 'assets/root_images/HNH02915.JPG',
-    coupleGroom: "assets/root_images/HNH03545.jpg",
-    coupleBride: "assets/root_images/HNH03430.jpg",
-    storyBanner: "assets/root_images/HNH03680.JPG",
-    thankYou: "assets/root_images/DRN00563.JPG",
+    coupleGroom: "assets/root_images/DSC04998.jpg",
+    coupleBride: "assets/root_images/DSC03637.jpg",
+    storyBanner: "assets/root_images/HNH03680.jpg",
+    thankYou: "assets/root_images/DSC03910.jpg",
     gallery: [
-      "assets/root_images/HNH00913.JPG",
-      "assets/root_images/HNH00317.JPG",
-      "assets/root_images/HNH00037.JPG",
-      "assets/root_images/HNH00222.JPG",
-      "assets/root_images/HNH00013.JPG",
+      "assets/root_images/DSC04693.jpg",
+      "assets/root_images/DSC04708.jpg",
+      "assets/root_images/DSC04957.jpg",
+      "assets/root_images/DSC04637.jpg",
+      "assets/root_images/DSC04207.jpg",
       // 'assets/root_images/HNH03619.JPG',
       // 'assets/root_images/HNH03428.jpg',
       // 'assets/root_images/HNH03545.jpg',
