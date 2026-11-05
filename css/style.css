@@ -2667,11 +2667,6 @@ select.form-control {
 #save-date-img-3 {
   object-position: bottom !important;
 }
-
-.save-date-item img.pos-top,
-#save-date-img-5 {
-  object-position: top !important;
-}
 /* 
 #save-date-img-3 {
   transform: translateY(40px);

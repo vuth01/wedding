@@ -592,7 +592,7 @@ function initSaveDateCarousel() {
   function start() {
     stop();
     if (reduceMotion || paused || !inView) return;
-    timer = setInterval(() => step(1), 4000);
+    timer = setInterval(() => step(1), 3000);
   }
 
   function restart() {
