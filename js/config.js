@@ -98,7 +98,7 @@ const WEDDING_CONFIG = {
 
   rsvp: {
     googleSheetScriptUrl:
-      "https://script.google.com/macros/s/AKfycbxSukXREIyfM6S_RH-PkMPpDHPuXRQnI9olYTn54rsw2WvX0YUoRLQC8oRu5T4q_oMvWQ/exec",
+      "https://script.google.com/macros/s/AKfycbwFvapsQvohd0eTn512uRxSK3R90x47SysNEMc3963wXaQiNO2Nf-Ez6XOiO5UfnHaAow/exec",
   },
 
   sakura: {
