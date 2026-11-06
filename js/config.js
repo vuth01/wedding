@@ -30,7 +30,7 @@ const WEDDING_CONFIG = {
   venueBride: {
     name: "TƯ GIA NHÀ GÁI",
     address: "Nhà văn hoá Khu Chợ Nam Cương - Xã Nội Bài - TP. Hà Nội",
-    time: "17:00 | THỨ BẢY | 28.11.2026",
+    time: "15:15 | THỨ BẢY | 28.11.2026",
     mapUrl: "https://maps.app.goo.gl/Z3Hw8at2QHHgUK1p8",
   },
 
@@ -55,23 +55,23 @@ const WEDDING_CONFIG = {
   ],
 
   images: {
-    hero: "assets/root_images/DSC03451.jpg",
+    hero: "assets/root_images/DSC03627.jpg", // DSC03451
     saveDate6: "assets/root_images/DSC04905.jpg",
-    saveDate1: "assets/root_images/DSC03627.jpg",
+    saveDate1: "assets/root_images/DSC03637.jpg",
     saveDate2: "assets/root_images/DSC03793.jpg",
     saveDate3: "assets/root_images/DSC03853.jpg",
     saveDate7: "assets/root_images/DSC04377.jpg",
     saveDate8: "assets/root_images/DSC04299.jpg",
     // saveDate9: 'assets/root_images/HNH02915.JPG',
-    coupleGroom: "assets/root_images/DSC04998.jpg",
-    coupleBride: "assets/root_images/DSC04637.jpg", // DSC03637
+    coupleGroom: "assets/root_images/DSC04480.jpg", // DSC04998
+    coupleBride: "assets/root_images/DSC04288.jpg", // DSC04637
     storyBanner: "assets/root_images/HNH03680.jpg",
     thankYou: "assets/root_images/DSC03910.jpg",
     gallery: [
       "assets/root_images/DSC04693.jpg",
       "assets/root_images/DSC04708.jpg",
       "assets/root_images/DSC04073.jpg",
-      "assets/root_images/DSC03637.jpg",
+      "assets/root_images/DSC04734.jpg", //DSC04998
       "assets/root_images/DSC04207.jpg",
       // 'assets/root_images/HNH03619.JPG',
       // 'assets/root_images/HNH03428.jpg',
