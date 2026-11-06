@@ -18,13 +18,13 @@ const WEDDING_CONFIG = {
     },
   },
 
-  weddingDate: "2026-11-29T14:00:00",
+  weddingDate: "2026-11-28T15:00:00",
   dateDisplay: {
-    day: "29",
+    day: "28",
     month: "11",
     year: "2026",
     shortYear: "26",
-    fullDateText: "17:00 | THỨ BẢY | 29.11.2026",
+    fullDateText: "15:30 | THỨ BẢY | 28.11.2026",
   },
 
   venueBride: {
@@ -61,7 +61,7 @@ const WEDDING_CONFIG = {
     saveDate2: "assets/root_images/DSC03793.jpg",
     saveDate3: "assets/root_images/DSC03853.jpg",
     saveDate7: "assets/root_images/DSC04377.jpg",
-    saveDate8: "assets/root_images/DSC04299.jpg",
+    saveDate8: "assets/root_images/DSC04969.jpg",
     // saveDate9: 'assets/root_images/HNH02915.JPG',
     coupleGroom: "assets/root_images/DSC04480.jpg", // DSC04998
     coupleBride: "assets/root_images/DSC04288.jpg", // DSC04637
