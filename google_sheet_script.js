@@ -9,10 +9,14 @@ function doPost(e) {
         "Lời Chúc",
         "Xác Nhận Tham Dự",
         "Người Đi Cùng",
-        "Khách Của Ai"
+        "Khách Của Ai",
       ]);
 
-      sheet.getRange(1, 1, 1, 6).setFontWeight("bold").setBackground("#e2e8f0").setHorizontalAlignment("center");
+      sheet
+        .getRange(1, 1, 1, 6)
+        .setFontWeight("bold")
+        .setBackground("#e2e8f0")
+        .setHorizontalAlignment("center");
       sheet.setFrozenRows(1);
     }
 
@@ -27,12 +31,16 @@ function doPost(e) {
       data = e.parameter || {};
     }
 
-    var timestamp = Utilities.formatDate(new Date(), "GMT+7", "dd/MM/yyyy HH:mm:ss");
+    var timestamp = Utilities.formatDate(
+      new Date(),
+      "GMT+7",
+      "dd/MM/yyyy HH:mm:ss",
+    );
     var name = data.name || "";
     var wishes = data.wishes || "";
     var attendance = data.attendance || "";
     var plusOne = data.plus_one || data.plusOne || "Không có";
-    var guestOf = data.guest_of || data.guestOf || "";
+    // var guestOf = data.guest_of || data.guestOf || "";
 
     sheet.appendRow([
       timestamp,
@@ -40,18 +48,21 @@ function doPost(e) {
       wishes,
       attendance,
       plusOne,
-      guestOf
+      // guestOf
     ]);
 
-    return ContentService.createTextOutput(JSON.stringify({
-      status: "success",
-      message: "Đã lưu thành công vào Google Sheet"
-    })).setMimeType(ContentService.MimeType.JSON);
-
+    return ContentService.createTextOutput(
+      JSON.stringify({
+        status: "success",
+        message: "Đã lưu thành công vào Google Sheet",
+      }),
+    ).setMimeType(ContentService.MimeType.JSON);
   } catch (error) {
-    return ContentService.createTextOutput(JSON.stringify({
-      status: "error",
-      message: error.toString()
-    })).setMimeType(ContentService.MimeType.JSON);
+    return ContentService.createTextOutput(
+      JSON.stringify({
+        status: "error",
+        message: error.toString(),
+      }),
+    ).setMimeType(ContentService.MimeType.JSON);
   }
 }

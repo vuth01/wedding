@@ -697,7 +697,7 @@ function initRSVPForm() {
     const wishes = form.querySelector('[name="wishes"]').value.trim();
     const attendanceVal = form.querySelector('[name="attendance"]').value;
     const plusOne = form.querySelector('[name="plus_one"]').value.trim();
-    const guestOfVal = form.querySelector('[name="guest_of"]').value;
+    // const guestOfVal = form.querySelector('[name="guest_of"]').value;
 
     if (!name) {
       showToast("Vui lòng nhập tên của bạn nhé!");
@@ -707,28 +707,28 @@ function initRSVPForm() {
     const attendanceText =
       attendanceVal === "yes" ? "Chắc chắn tham dự" : "Không thể tham dự";
     let guestOfText = "Bạn chung cả hai";
-    if (guestOfVal === "groom") {
-      guestOfText =
-        typeof WEDDING_CONFIG !== "undefined" &&
-        WEDDING_CONFIG.groom &&
-        WEDDING_CONFIG.groom.name
-          ? `Khách Chú rể (${WEDDING_CONFIG.groom.name})`
-          : "Khách Chú rể";
-    } else if (guestOfVal === "bride") {
-      guestOfText =
-        typeof WEDDING_CONFIG !== "undefined" &&
-        WEDDING_CONFIG.bride &&
-        WEDDING_CONFIG.bride.name
-          ? `Khách Cô dâu (${WEDDING_CONFIG.bride.name})`
-          : "Khách Cô dâu";
-    }
+    // if (guestOfVal === "groom") {
+    //   guestOfText =
+    //     typeof WEDDING_CONFIG !== "undefined" &&
+    //     WEDDING_CONFIG.groom &&
+    //     WEDDING_CONFIG.groom.name
+    //       ? `Khách Chú rể (${WEDDING_CONFIG.groom.name})`
+    //       : "Khách Chú rể";
+    // } else if (guestOfVal === "bride") {
+    //   guestOfText =
+    //     typeof WEDDING_CONFIG !== "undefined" &&
+    //     WEDDING_CONFIG.bride &&
+    //     WEDDING_CONFIG.bride.name
+    //       ? `Khách Cô dâu (${WEDDING_CONFIG.bride.name})`
+    //       : "Khách Cô dâu";
+    // }
 
     const payload = {
       name: name,
       wishes: wishes,
       attendance: attendanceText,
       plus_one: plusOne || "Không có",
-      guest_of: guestOfText,
+      // guest_of: guestOfText,
     };
 
     const scriptUrl =

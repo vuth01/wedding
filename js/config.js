@@ -64,14 +64,14 @@ const WEDDING_CONFIG = {
     saveDate8: "assets/root_images/DSC04299.jpg",
     // saveDate9: 'assets/root_images/HNH02915.JPG',
     coupleGroom: "assets/root_images/DSC04998.jpg",
-    coupleBride: "assets/root_images/DSC03637.jpg",
+    coupleBride: "assets/root_images/DSC04637.jpg", // DSC03637
     storyBanner: "assets/root_images/HNH03680.jpg",
     thankYou: "assets/root_images/DSC03910.jpg",
     gallery: [
       "assets/root_images/DSC04693.jpg",
       "assets/root_images/DSC04708.jpg",
       "assets/root_images/DSC04073.jpg",
-      "assets/root_images/DSC04637.jpg",
+      "assets/root_images/DSC03637.jpg",
       "assets/root_images/DSC04207.jpg",
       // 'assets/root_images/HNH03619.JPG',
       // 'assets/root_images/HNH03428.jpg',
