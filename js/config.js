@@ -55,29 +55,29 @@ const WEDDING_CONFIG = {
   ],
 
   images: {
-    hero: "assets/root_images/DSC03627.jpg", // DSC03451
-    saveDate6: "assets/root_images/DSC04905.jpg",
-    saveDate1: "assets/root_images/DSC03637.jpg",
-    saveDate2: "assets/root_images/DSC03793.jpg",
-    saveDate3: "assets/root_images/DSC03853.jpg",
-    saveDate7: "assets/root_images/DSC04377.jpg",
-    saveDate8: "assets/root_images/DSC04969.jpg",
+    hero: "assets/root_images/DSC03627.webp", // DSC03451
+    saveDate6: "assets/root_images/DSC04905.webp",
+    saveDate1: "assets/root_images/DSC03637.webp",
+    saveDate2: "assets/root_images/DSC03793.webp",
+    saveDate3: "assets/root_images/DSC03853.webp",
+    saveDate7: "assets/root_images/DSC04377.webp",
+    saveDate8: "assets/root_images/DSC04969.webp",
     // saveDate9: 'assets/root_images/HNH02915.JPG',
-    coupleGroom: "assets/root_images/DSC04480.jpg", // DSC04998
-    coupleBride: "assets/root_images/DSC04288.jpg", // DSC04637
+    coupleGroom: "assets/root_images/DSC04480.webp", // DSC04998
+    coupleBride: "assets/root_images/DSC04288.webp", // DSC04637
     storyBanner: "assets/root_images/HNH03680.jpg",
-    thankYou: "assets/root_images/DSC03910.jpg",
+    thankYou: "assets/root_images/DSC03910.webp",
     gallery: [
-      "assets/root_images/DSC04693.jpg",
-      "assets/root_images/DSC04708.jpg",
-      "assets/root_images/DSC04073.jpg",
-      "assets/root_images/DSC04734.jpg", //DSC04998
-      "assets/root_images/DSC04207.jpg",
+      "assets/root_images/DSC04693.webp",
+      "assets/root_images/DSC04708.webp",
+      "assets/root_images/DSC04073.webp",
+      "assets/root_images/DSC04734.webp", //DSC04998
+      "assets/root_images/DSC04207.webp",
       // 'assets/root_images/HNH03619.JPG',
-      // 'assets/root_images/HNH03428.jpg',
+      // 'assets/root_images/HNH03428.webp',
       // 'assets/root_images/HNH03545.jpg',
       // 'assets/root_images/HNH03792.jpg',
-      // 'assets/root_images/HNH02590.jpg'
+      // 'assets/root_images/HNH02590.webp'
     ],
   },
 
@@ -92,7 +92,7 @@ const WEDDING_CONFIG = {
       bankName: "MB Bank",
       accountNumber: "9997166666789",
       accountName: "BUI DIEU LINH",
-      qrImage: "assets/root_images/BANKQRLINH.jpg",
+      qrImage: "assets/root_images/BANKQRLINH.webp",
     },
   },
 
