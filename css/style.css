@@ -40,7 +40,7 @@ img {
   max-width: none !important;
   max-height: none !important;
   object-fit: cover !important;
-  object-position: center !important;
+  object-position: top !important;
   display: block;
   flex-shrink: 0;
 }
