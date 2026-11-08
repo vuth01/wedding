@@ -2673,7 +2673,19 @@ select.form-control {
 #save-date-img-6,
 #save-date-img-1,
 #save-date-img-3 {
+  object-position: center !important;
+}
+
+.save-date-item img.pos-bottom,
+#save-date-img-2{
   object-position: bottom !important;
+}
+
+
+.save-date-item img.pos-bottom,
+#save-date-img-7,
+#save-date-img-8 {
+  object-position: top !important;
 }
 /* 
 #save-date-img-3 {
