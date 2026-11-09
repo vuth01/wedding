@@ -2027,14 +2027,14 @@ select.form-control {
 
 @media (max-width: 767px) {
   .toast-notice {
-    top: auto;
-    bottom: calc(20px + env(safe-area-inset-bottom));
+    top: calc(20px + env(safe-area-inset-top));
+    bottom: auto;
     width: max-content;
     max-width: calc(100vw - 32px);
     padding: 12px 18px;
     text-align: center;
     white-space: normal;
-    transform: translateX(-50%) translateY(100px);
+    transform: translateX(-50%) translateY(-100px);
   }
 
   .toast-notice.show {
