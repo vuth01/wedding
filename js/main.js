@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initGalleryLightbox();
   initSaveDateCarousel();
   initRSVPForm();
-  initWishes();
+  // initWishes();
   initGiftModal();
   initThemeSwitcher();
   initScrollAnimations();
@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+/* WISH LIST TEMPORARILY DISABLED
 function initWishes() {
   loadWishes();
   startWishesAutoRefresh();
@@ -165,6 +166,7 @@ function formatWishTime(timestamp) {
 
   return value;
 }
+*/
 
 function getWeddingSide() {
   if (window.__WEDDING_SIDE) return window.__WEDDING_SIDE;
