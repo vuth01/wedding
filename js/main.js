@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initGalleryLightbox();
   initSaveDateCarousel();
   initRSVPForm();
+  initWishes();
   initGiftModal();
   initThemeSwitcher();
   initScrollAnimations();
@@ -14,6 +15,117 @@ document.addEventListener("DOMContentLoaded", () => {
     initSakuraEffect();
   }
 });
+
+function initWishes() {
+  loadWishes();
+  startWishesAutoRefresh();
+}
+
+let wishesRefreshTimer = null;
+
+function startWishesAutoRefresh() {
+  const refresh = () => {
+    if (wishesRefreshTimer) {
+      clearInterval(wishesRefreshTimer);
+      wishesRefreshTimer = null;
+    }
+
+    if (document.hidden) return;
+
+    wishesRefreshTimer = setInterval(() => {
+      if (!document.hidden) loadWishes();
+    }, 10000);
+  };
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      clearInterval(wishesRefreshTimer);
+      wishesRefreshTimer = null;
+    } else {
+      loadWishes();
+      refresh();
+    }
+  });
+
+  refresh();
+}
+
+function loadWishes() {
+  const list = document.getElementById("wishes-list");
+  const scriptUrl =
+    typeof WEDDING_CONFIG !== "undefined" &&
+    WEDDING_CONFIG.rsvp &&
+    WEDDING_CONFIG.rsvp.googleSheetScriptUrl
+      ? WEDDING_CONFIG.rsvp.googleSheetScriptUrl.trim()
+      : "";
+
+  if (!list || !scriptUrl) return Promise.resolve();
+
+  return new Promise((resolve) => {
+
+  const callbackName = `weddingWishes_${Date.now()}`;
+  const script = document.createElement("script");
+  const cleanup = () => {
+    delete window[callbackName];
+    script.remove();
+  };
+
+  window[callbackName] = (wishes) => {
+    cleanup();
+    list.replaceChildren();
+    list.classList.remove("has-wishes");
+
+    if (!Array.isArray(wishes) || wishes.length === 0) {
+      const empty = document.createElement("p");
+      empty.className = "wishes-status";
+      empty.textContent = "Hãy dành tặng những lời chúc yêu thương dành cho chúng mình nhé!";
+      empty.textContent = "Chưa có lời chúc nào. Hãy là người gửi lời chúc đầu tiên nhé!";
+      empty.textContent = "Hãy dành tặng những lời chúc yêu thương dành cho chúng mình nhé!";
+      list.appendChild(empty);
+      resolve();
+      return;
+    }
+
+    list.classList.add("has-wishes");
+
+    wishes.forEach((item) => {
+      const card = document.createElement("article");
+      card.className = "wish-card";
+
+      const name = document.createElement("h3");
+      name.className = "wish-name";
+      name.textContent = item.name || "Một người bạn";
+
+      const message = document.createElement("p");
+      message.className = "wish-message";
+      message.textContent = item.wishes || "";
+
+      const heart = document.createElement("span");
+      heart.className = "wish-heart";
+      heart.setAttribute("aria-hidden", "true");
+      heart.textContent = "♥";
+
+      card.append(name, message, heart);
+      list.appendChild(card);
+    });
+    resolve();
+  };
+
+  script.onerror = () => {
+    cleanup();
+    list.replaceChildren();
+    list.classList.remove("has-wishes");
+    const error = document.createElement("p");
+    error.className = "wishes-status";
+    error.textContent = "Chưa thể tải lời chúc. Vui lòng thử lại sau.";
+    list.appendChild(error);
+    resolve();
+  };
+
+  script.src = `${scriptUrl}?callback=${encodeURIComponent(callbackName)}&_=${Date.now()}`;
+  document.body.appendChild(script);
+  });
+}
 
 function getWeddingSide() {
   if (window.__WEDDING_SIDE) return window.__WEDDING_SIDE;
@@ -689,6 +801,22 @@ function initRSVPForm() {
   const submitBtn =
     document.getElementById("rsvp-submit") ||
     form.querySelector('button[type="submit"]');
+  const attendanceSelect = form.querySelector('[name="attendance"]');
+  const plusOneInput = form.querySelector('[name="plus_one"]');
+
+  const updatePlusOneState = () => {
+    const cannotAttend = attendanceSelect && attendanceSelect.value === "no";
+
+    if (plusOneInput) {
+      plusOneInput.disabled = cannotAttend;
+      if (cannotAttend) plusOneInput.value = "";
+    }
+  };
+
+  if (attendanceSelect) {
+    attendanceSelect.addEventListener("change", updatePlusOneState);
+    updatePlusOneState();
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -704,6 +832,9 @@ function initRSVPForm() {
       return;
     }
 
+    const attendanceTextOriginal =
+      attendanceVal === "no" ? "Không thể tham dự" : "";
+    const plusOneValue = attendanceVal === "no" ? "0" : plusOne;
     const attendanceText =
       attendanceVal === "yes" ? "Chắc chắn tham dự" : "Không thể tham dự";
     let guestOfText = "Bạn chung cả hai";
@@ -727,7 +858,7 @@ function initRSVPForm() {
       name: name,
       wishes: wishes,
       attendance: attendanceText,
-      plus_one: plusOne || "Không có",
+      plus_one: plusOneValue || "Không có",
       // guest_of: guestOfText,
     };
 
@@ -764,6 +895,13 @@ function initRSVPForm() {
       showToast(`Cảm ơn ${name}! Xác nhận của bạn đã được gửi thành công ❤️`);
       form.reset();
     } finally {
+      if (scriptUrl && document.getElementById("wishes-list")) {
+        await new Promise((resolve) => setTimeout(resolve, 700));
+        await loadWishes();
+      }
+
+      updatePlusOneState();
+
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.textContent = originalBtnText;
@@ -872,7 +1010,8 @@ function showToast(message) {
   toast.textContent = message;
   toast.classList.add("show");
 
-  setTimeout(() => {
+  clearTimeout(toast.hideTimer);
+  toast.hideTimer = setTimeout(() => {
     toast.classList.remove("show");
   }, 3500);
 }

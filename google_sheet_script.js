@@ -66,3 +66,38 @@ function doPost(e) {
     ).setMimeType(ContentService.MimeType.JSON);
   }
 }
+
+function doGet(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var values = sheet.getDataRange().getValues();
+    var wishes = [];
+
+    for (var i = values.length - 1; i > 0; i--) {
+      var name = values[i][1];
+      var message = values[i][2];
+
+      if (name && message) {
+        wishes.push({
+          name: String(name),
+          wishes: String(message),
+        });
+      }
+    }
+
+    var output = JSON.stringify(wishes);
+    var callback = e && e.parameter ? e.parameter.callback : "";
+
+    if (callback && /^[a-zA-Z_$][0-9a-zA-Z_$]*$/.test(callback)) {
+      output = callback + "(" + output + ")";
+      return ContentService.createTextOutput(output)
+        .setMimeType(ContentService.MimeType.JAVASCRIPT);
+    }
+
+    return ContentService.createTextOutput(output)
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify([]))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
