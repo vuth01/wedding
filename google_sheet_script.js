@@ -81,6 +81,7 @@ function doGet(e) {
         wishes.push({
           name: String(name),
           wishes: String(message),
+          timestamp: formatWishTimestamp_(values[i][0]),
         });
       }
     }
@@ -100,4 +101,21 @@ function doGet(e) {
     return ContentService.createTextOutput(JSON.stringify([]))
       .setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+function formatWishTimestamp_(value) {
+  if (!value) return "";
+
+  if (Object.prototype.toString.call(value) === "[object Date]") {
+    return Utilities.formatDate(value, "GMT+7", "HH:mm:ss d/M/yyyy");
+  }
+
+  var text = String(value);
+  var match = text.match(/^(\d{2})\/(\d{2})\/(\d{4})\s+(\d{2}:\d{2}:\d{2})$/);
+
+  if (match) {
+    return match[4] + " " + Number(match[1]) + "/" + Number(match[2]) + "/" + match[3];
+  }
+
+  return text;
 }

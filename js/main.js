@@ -96,6 +96,15 @@ function loadWishes() {
       name.className = "wish-name";
       name.textContent = item.name || "Một người bạn";
 
+      const header = document.createElement("div");
+      header.className = "wish-card-header";
+
+      const time = document.createElement("time");
+      time.className = "wish-time";
+      time.dateTime = item.timestamp || "";
+      time.textContent = formatWishTime(item.timestamp);
+      header.append(name, time);
+
       const message = document.createElement("p");
       message.className = "wish-message";
       message.textContent = item.wishes || "";
@@ -107,7 +116,7 @@ function loadWishes() {
       heart.textContent = "♥";
 
       heart.textContent = "\u2764\uFE0E";
-      card.append(name, message, heart);
+      card.append(header, message);
       list.appendChild(card);
     });
     resolve();
@@ -127,6 +136,34 @@ function loadWishes() {
   script.src = `${scriptUrl}?callback=${encodeURIComponent(callbackName)}&_=${Date.now()}`;
   document.body.appendChild(script);
   });
+}
+
+function formatWishTime(timestamp) {
+  const value = String(timestamp || "");
+  const match = value.match(/^(\d{2})\/(\d{2})\/(\d{4})\s+(\d{2}:\d{2}:\d{2})$/);
+
+  if (match) {
+    return `${match[4]} ${Number(match[1])}/${Number(match[2])}/${match[3]}`;
+  }
+
+  const date = new Date(value);
+  if (!Number.isNaN(date.getTime())) {
+    const parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Ho_Chi_Minh",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      day: "numeric",
+      month: "numeric",
+      year: "numeric",
+      hourCycle: "h23",
+    }).formatToParts(date);
+    const getPart = (type) => parts.find((part) => part.type === type)?.value || "";
+
+    return `${getPart("hour")}:${getPart("minute")}:${getPart("second")} ${Number(getPart("day"))}/${Number(getPart("month"))}/${getPart("year")}`;
+  }
+
+  return value;
 }
 
 function getWeddingSide() {
