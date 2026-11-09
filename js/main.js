@@ -103,8 +103,10 @@ function loadWishes() {
       const heart = document.createElement("span");
       heart.className = "wish-heart";
       heart.setAttribute("aria-hidden", "true");
+      heart.textContent = "\u2764\uFE0E";
       heart.textContent = "♥";
 
+      heart.textContent = "\u2764\uFE0E";
       card.append(name, message, heart);
       list.appendChild(card);
     });
