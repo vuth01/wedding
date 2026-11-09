@@ -1547,6 +1547,7 @@ select.form-control {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.21rem;
   line-height: 1.45;
+  text-align: justify;
   white-space: pre-wrap;
   word-break: break-word;
 }
