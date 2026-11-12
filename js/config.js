@@ -18,7 +18,7 @@ const WEDDING_CONFIG = {
     },
   },
 
-  weddingDate: "2026-11-29T10:00:00",
+  weddingDate: "2026-11-29T09:45:00",
   dateDisplay: {
     day: "29",
     month: "11",
@@ -37,7 +37,7 @@ const WEDDING_CONFIG = {
   venueGroom: {
     name: "TƯ GIA NHÀ TRAI",
     address: "Thôn Văn Hàn - Xã Thái Ninh - Tỉnh Hưng Yên",
-    time: "10:00 | CHỦ NHẬT | 29.11.2026",
+    time: "09:45 | CHỦ NHẬT | 29.11.2026",
     mapUrl: "https://maps.app.goo.gl/DFPSaRstR3q2vNdG6",
   },
 
