@@ -48,10 +48,10 @@ const WEDDING_CONFIG = {
   },
 
   timeline: [
-    { time: "09:00", title: "ĐÓN TIẾP KHÁCH MỜI", icon: "camera" },
+    { time: "09:30", title: "ĐÓN TIẾP KHÁCH MỜI", icon: "camera" },
 
-    { time: "10:00", title: "CHUNG VUI KHAI TIỆC", icon: "dining" },
-    { time: "11:30", title: "THƯỞNG THỨC TIỆC NGỌT, ÂM NHẠC", icon: "music" },
+    { time: "09:45", title: "LỄ THÀNH HÔN", icon: "ring" },
+    { time: "10:15", title: "KHAI TIỆC", icon: "dining" },
   ],
 
   images: {
