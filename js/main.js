@@ -407,7 +407,7 @@ function initDynamicConfig() {
               titleHtml =
                 words.slice(0, 2).join(" ") + "<br>" + words.slice(2).join(" ");
             } else if (words.length === 2) {
-              titleHtml = words[0] + "<br>" + words[1];
+              titleHtml = words[0] + " " + words[1];
             }
           }
           return `
