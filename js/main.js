@@ -556,6 +556,24 @@ function initMusicPlayer() {
 
   let isPlaying = false;
 
+  function markAsPlaying() {
+    musicBtn.classList.add("playing");
+    musicBtn.title = "Tắt nhạc cưới";
+    isPlaying = true;
+  }
+
+  function tryToPlay() {
+    return audio
+      .play()
+      .then(() => {
+        markAsPlaying();
+      })
+      .catch((err) => {
+        // Trình duyệt có thể chặn autoplay có tiếng cho tới khi khách tương tác.
+        console.log("Autoplay bị chặn bởi trình duyệt:", err);
+      });
+  }
+
   function togglePlay() {
     if (isPlaying) {
       audio.pause();
@@ -563,39 +581,33 @@ function initMusicPlayer() {
       musicBtn.title = "Bật nhạc cưới";
       isPlaying = false;
     } else {
-      audio
-        .play()
-        .then(() => {
-          musicBtn.classList.add("playing");
-          musicBtn.title = "Tắt nhạc cưới";
-          isPlaying = true;
-        })
-        .catch((err) => {
-          console.log("Autoplay bị chặn bởi trình duyệt:", err);
-        });
+      tryToPlay();
     }
   }
 
   musicBtn.addEventListener("click", togglePlay);
 
+  // Thử phát ngay khi thiệp vừa mở.
+  tryToPlay();
+
   const handleFirstInteraction = () => {
     if (!isPlaying) {
-      audio
-        .play()
-        .then(() => {
-          musicBtn.classList.add("playing");
-          isPlaying = true;
-        })
-        .catch(() => {});
+      tryToPlay();
     }
     document.removeEventListener("click", handleFirstInteraction);
     document.removeEventListener("touchstart", handleFirstInteraction);
+    document.removeEventListener("pointerdown", handleFirstInteraction);
+    document.removeEventListener("keydown", handleFirstInteraction);
   };
 
   document.addEventListener("click", handleFirstInteraction, { once: true });
   document.addEventListener("touchstart", handleFirstInteraction, {
     once: true,
   });
+  document.addEventListener("pointerdown", handleFirstInteraction, {
+    once: true,
+  });
+  document.addEventListener("keydown", handleFirstInteraction, { once: true });
 }
 
 function initSaveDateCarousel() {
